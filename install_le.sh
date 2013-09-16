@@ -11,4 +11,6 @@ printf "Moving files"
 mv le /usr/bin/
 mv le.sh /etc/rc.d/
 
+echo "logentries_enable=\"YES\"" >> /etc/rc.conf
+
 printf "Installtion complete, reboot your machine for changes to take effect"
