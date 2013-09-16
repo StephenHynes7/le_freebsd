@@ -5,6 +5,7 @@
 . /etc/rc.subr
 
 name="logentries"
+pidfile="/var/run/${name}.pid"
 python="/usr/local/bin/python"
 le="/usr/bin/le"                                                          
 monitor="monitor"
