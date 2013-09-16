@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# PROVIDE: logentries
+
+. /etc/rc.subr
+
+name="logentries"
+python="/usr/local/bin/python"
+le="/usr/bin/le"                                                          
+monitor="monitor"
+rcvar="logentries_enable"
+start_cmd="le_start"
+stop_cmd=":"
+
+load_rc_config $name
+
+le_start()
+{
+    if checkyesno ${rcvar}; then
+        ${python} ${le} ${monitor}
+    fi
+}
+
+run_rc_command "$1"
