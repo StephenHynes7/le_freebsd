@@ -8,7 +8,7 @@ chmod +x logentries
 
 printf "Moving files.\n"
 
-mv le /usr/bin/
+mv le /usr/local/bin/
 mv logentries /etc/rc.d/
 
 echo "logentries_enable=\"YES\"" >> /etc/rc.conf
