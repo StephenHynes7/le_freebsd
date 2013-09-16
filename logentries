@@ -41,5 +41,14 @@ le_stop()
 
 }
 
+le_restart()
+{
+    printf "Restarting agent now. \n"
+    le_stop
+    le_start
+             
+}
+
+
 
 run_rc_command "$1"
