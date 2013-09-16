@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-
+#! /bin/sh
 
 printf "Downloading nessceary files"
 curl -O https://raw.github.com/logentries/le/master/le
