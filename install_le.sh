@@ -3,7 +3,7 @@
 
 printf "Downloading nessceary files"
 curl -O https://raw.github.com/logentries/le/master/le
-curl -O https://raw.github.com/StephenHynes7/le_freebsd/master/le.sh
+curl -O https://raw.github.com/StephenHynes7/le_freebsd/master/logentries
 chmod +x le*
 
 printf "Moving files"
