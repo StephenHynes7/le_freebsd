@@ -7,19 +7,39 @@
 name="logentries"
 pidfile="/var/run/${name}.pid"
 python="/usr/local/bin/python"
-le="/usr/bin/le"                                                          
+le="/usr/bin/le"
 monitor="monitor"
 rcvar="logentries_enable"
 start_cmd="le_start"
-stop_cmd=":"
+stop_cmd="le_stop"
+restart_cmd="le_restart"
 
 load_rc_config $name
-
 le_start()
 {
-    if checkyesno ${rcvar}; then
-        ${python} ${le} ${monitor}
+    if [ ! -f ${pidfile} ]
+    then
+        echo -n "Starting Logentries Agent"
+        ${python} ${le} ${monitor} &
+        echo $! > ${pidfile}
+    else
+        echo "Logentries Agent is already running"
     fi
 }
+
+le_stop()
+{
+    if [ ! -f ${pidfile} ]
+    then
+        echo "Lognetries Agent is not running"
+    else
+    echo -n "Stopping services: Logentries Agent"
+    kill `cat ${pidfile}`
+    rm ${pidfile}
+    echo "."
+    fi
+
+}
+
 
 run_rc_command "$1"
