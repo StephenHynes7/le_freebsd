@@ -7,7 +7,7 @@
 name="logentries"
 pidfile="/var/run/${name}.pid"
 python="/usr/local/bin/python"
-le="/usr/bin/local/le"
+le="/usr/local/bin/le"
 monitor="monitor"
 rcvar="logentries_enable"
 start_cmd="le_start"
