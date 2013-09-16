@@ -4,7 +4,8 @@
 printf "Downloading nessceary files"
 curl -O https://raw.github.com/logentries/le/master/le
 curl -O https://raw.github.com/StephenHynes7/le_freebsd/master/logentries
-chmod +x le*
+chmod +x le
+chmod +x logentries
 
 printf "Moving files"
 
